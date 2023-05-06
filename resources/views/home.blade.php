@@ -11,32 +11,28 @@
 
         </header>
         <main>
-            <h1 class="h1-center">Countdown</h1>
-            <p class="p-date">make your own<p>
+            <h1 class="h1-center">Ramadhan 2023</h1>
+            <p class="p-date">22 Mac 2023<p>
             <div class="div-timegroup">
-                <table>
-                    <tr>
-                        <td style="text-align: center">
-                            <h2>login</h2>
-                            <p>or register, if you haven't</p>
-                        </td>
-                        <td style="text-align: center">
-                            <h2>create countdown</h2>
-                            <p>name your event, and give description</p>
-                        </td>
-                        <td style="text-align: center">
-                            <h2>share</h2>
-                            <p>a shareable link will be produced</p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div>
-                <a href="/login">login</a>
-                <a style="tehee" href="/register">register</a>
+                <div class="div-time">
+                    <p class="p-time">hari</p>
+                    <h1 id="time-day" class="h1-center h1-large h1-time">0</h1>
+                </div>
+                <div class="div-time">
+                    <p class="p-time">jam</p>
+                    <h1 id="time-hour" class="h1-center h1-large h1-time">0</h1>
+                </div>
+                <div class="div-time">
+                    <p class="p-time">minit</p>
+                    <h1 id="time-minute" class="h1-center h1-large h1-time">0</h1>
+                </div>
+                <div class="div-time">
+                    <p class="p-time">saat</p>
+                    <h1 id="time-second" class="h1-center h1-large h1-time">0</h1>
+                </div>
             </div>
             <div class="div-note">
-                <p class="p-note">made with Laravel ❤</p>
+                <p class="p-note">semoga kita sampe ke Ramadhan kelak ❤</p>
             </div>
         </main>
         <footer class="custom-footer">
