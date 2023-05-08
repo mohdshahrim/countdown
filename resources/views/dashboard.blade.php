@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            {{ __("Welcome") }} {{ Auth::user()->name }}
+            <h2>{{ __("Welcome") }} {{ Auth::user()->name }}</h2>
         </header>
         <br>
         <main>
@@ -25,17 +25,17 @@
                 <tbody>
                     <tr>
                         <td class="table-item">Ramadhan 2024</td>
-                        <td class="table-item">-</td>
-                        <td class="table-item">9 May 2024 00:00</td>
-                        <td class="table-item"><a target="_blank" href="https://countdown.mohdshahrim.com">link</a>&nbsp;<button class="button-small">copy</button></td>
+                        <td class="table-item table-item-small">example</td>
+                        <td class="table-item table-item-small">12 Mar 2024, 00:00 AM</td>
+                        <td class="table-item"><a target="_blank" href="https://countdown.mohdshahrim.com">link</a>&nbsp;&nbsp;&nbsp;<button class="button-small">copy</button></td>
                         <td class="table-item" style="color: red; font-size: small;">Example. Cannot delete.</td>
                     </tr>
                     @forelse($countdowns as $countdown)
                     <tr>
                         <td class="table-item">{{ $countdown->title }}</td>
-                        <td class="table-item">{{ $countdown->description }}</td>
-                        <td class="table-item">@php echo date('j F Y, g:i A', strtotime($countdown->datetime)) @endphp</td>
-                        <td class="table-item"><a target="_blank" href="/countdown/{{ $countdown->urlsuffix }}">link</a>&nbsp;<button class="button-small">copy</button></td>
+                        <td class="table-item table-item-small">{{ $countdown->description }}</td>
+                        <td class="table-item table-item-small">@php echo date('j F Y, g:i A', strtotime($countdown->datetime)) @endphp</td>
+                        <td class="table-item"><a target="_blank" href="/countdown/{{ $countdown->urlsuffix }}">link</a>&nbsp;&nbsp;&nbsp;<button onclick="copyLink('{{$countdown->urlsuffix}}')" class="button-small">copy</button></td>
                         <td class="table-item">
                             <form class="" action="/delete/{{$countdown->id}}" method="POST">
                                 @method('DELETE')
@@ -45,7 +45,7 @@
                         </td>
                     @empty
                     <tr>
-                        <td colspan="3">No products found</td>
+                        <td colspan="5">No products found</td>
                     </tr>
                     @endforelse
                 </tbody>
@@ -93,6 +93,11 @@
         document.getElementById('dialog').addEventListener('close', (event) => {
             document.getElementById('dialog-result').innerText = `Your answer: ${event.target.returnValue}`
         })
+
+        function copyLink(str) {
+            const clipboard = navigator.clipboard || window.clipboard
+            clipboard.writeText("{{url('/countdown')}}/"+str);
+        }
     </script>
     <style>
         .h1-center {
@@ -144,6 +149,9 @@
             padding: 0.2em;
             font-size: smaller;
             background-color: darkcyan !important;
+        }
+        .table-item-small {
+            font-size: smaller;
         }
     </style>
 </html>

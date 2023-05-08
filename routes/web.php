@@ -29,14 +29,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::post('/create', [HomeController::class, 'store']);
+    Route::delete('/delete/{id}', [HomeController::class, 'destroy']);
 });
 
-
-Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
-Route::get('/home', [HomeController::class, 'index']);
-Route::post('/create', [HomeController::class, 'store']);
 Route::get('/countdown/{url}', [HomeController::class, 'display']);
-Route::delete('/delete/{id}', [HomeController::class, 'destroy']);
+
 
 
 require __DIR__.'/auth.php';
