@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Countdown extends Model
 {
     use HasFactory;
+    protected $fillable = ['id','userid','title','description','datetime','urlsuffix'];
+    public $timestamps = false;
 }

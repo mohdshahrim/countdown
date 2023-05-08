@@ -34,6 +34,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/home', [HomeController::class, 'index']);
+Route::post('/create', [HomeController::class, 'store']);
+Route::get('/countdown/{url}', [HomeController::class, 'display']);
+Route::delete('/delete/{id}', [HomeController::class, 'destroy']);
 
 
 require __DIR__.'/auth.php';

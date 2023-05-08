@@ -33,7 +33,7 @@
             </div>
             <div>
                 <a href="/login">login</a>
-                <a style="tehee" href="/register">register</a>
+                <a href="/register">register</a>
             </div>
             <div class="div-note">
                 <p class="p-note">made with Laravel ❤</p>
