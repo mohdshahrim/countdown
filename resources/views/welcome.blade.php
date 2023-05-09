@@ -12,36 +12,45 @@
         </header>
         <main>
             <h1 class="h1-center">Countdown</h1>
-            <p class="p-date">make your own<p>
+            <p class="p-date">make your event counts<p>
             <div class="div-timegroup">
                 <table>
                     <tr>
                         <td style="text-align: center">
                             <h2>login</h2>
-                            <p>or register, if you haven't</p>
+                            <p class="text-small">or register, if you haven't</p>
                         </td>
                         <td style="text-align: center">
                             <h2>create countdown</h2>
-                            <p>name your event, and give description</p>
+                            <p class="text-small">name your event, and give description</p>
                         </td>
                         <td style="text-align: center">
                             <h2>share</h2>
-                            <p>a shareable link will be produced</p>
+                            <p class="text-small">a shareable link will be produced</p>
                         </td>
                     </tr>
                 </table>
             </div>
-            <div>
-                <a href="/login">login</a>
-                <a href="/register">register</a>
+
+            <div class="div-note">
+                <p>See examples:</p>
+                <p><a target="_blank" href="https://countdown.mohdshahrim.com">Ramadhan 2024 countdown</a></p>
+                <p><a target="_blank" href="https://countdown.mohdshahrim.com/strava2022">Strava Virtual Run</a></p>
             </div>
+
+            <div class="div-note">
+                <form action="/login" class="form-display">
+                    <button>login</button>
+                </form>
+                <form action="/register" class="form-display">
+                    <button>register</button>
+                </form>
+            </div>
+
             <div class="div-note">
                 <p class="p-note">made with Laravel ❤</p>
             </div>
         </main>
-        <footer class="custom-footer">
-            <p><a href="https://www.mohdshahrim.com/">mohdshahrim.com</a></p>
-        </footer>
     </body>
     <script>
     </script>
@@ -85,6 +94,14 @@
         .div-note {
             margin-top: 3em;
             text-align: center;
+        }
+
+        /* for welcome page */
+        .text-small {
+            font-size: smaller;
+        }
+        .form-display {
+            display: inline-block;
         }
     </style>
 </html>
